@@ -1,0 +1,154 @@
+*{
+    box-sizing: border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+#wrapper {
+    box-sizing: border-box;
+    border-radius: 1.5%;
+    background-color: black;
+    height: 60vh;
+    width: 40vh;    
+}
+
+#container1{
+    display: block;
+    width: 100%;
+    height: 7%;
+}
+
+.dot{
+    float: left ;
+    height: 60%;
+    width: 7%;
+    border: 1px solid black;
+    box-sizing: border-box;
+    border-radius: 100%;   
+    margin: 7px -5px 0px 10px;
+}
+
+div#red {
+    background-color: red;
+}
+
+div#yellow {
+    background-color: yellow;
+}
+
+div#green {
+    background-color: green;
+}
+
+#container2{
+    display: block;
+    padding-left: 10px;
+    padding-right: 10px;
+    overflow: hidden;
+    word-wrap: break-word;
+    background-color: black;
+    width: 100%;
+    min-height: 23%;
+    height: fit-content;
+    
+}
+
+
+.previous {
+    float: left;
+    display: block;
+    color: white;
+    height: fit-content;
+    font-size: 1.5rem;
+    min-height: 30px;
+    width: 100%;
+    text-align: right;
+    
+    outline: none;
+    border: unset;
+}
+
+.input {
+    float: right;
+    display: block;
+    color: white;
+    font-size: 60px;
+    min-height: 70%;
+    width: 100%;
+    height: fit-content;
+    text-align: right;
+    outline: none;
+    border: unset;
+}
+input[type=text]{
+    background-color: black;
+}
+
+
+#container3{
+    display: block;
+    background-color: pink;
+    width: 100%;
+    height: 70%;
+    border-bottom-right-radius: 2%;
+    border-bottom-left-radius: 2%;
+}
+
+
+.button{
+    float: left;
+    border: 1px solid black;
+    box-sizing: border-box;
+    width: calc(100% / 4);
+    height: calc(100% / 5);
+    font-size: 30px;
+    text-align: center;
+    background-color: #5f6062;
+    color: white;
+    overflow: visible;
+    
+}
+
+
+button:hover {
+    cursor: pointer;
+    opacity: 0.8;
+}
+
+
+
+#zero{
+    width: calc((100% / 4)*2);
+    height: calc(100% / 5);
+    padding-right: 25%;
+    border-bottom-left-radius: 5%;
+}
+
+
+#equal {
+    border-bottom-right-radius: 7%;
+}
+
+
+#AC, #doidau, #percent {
+    background-color: #3f4143;
+}
+
+#divice, #multiply, #subtract, #add, #equal {
+    background-color: #fd9e2b;
+}
+
+
+
+.clr {
+    clear: both;
+  }
+
+
