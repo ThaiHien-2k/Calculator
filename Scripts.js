@@ -83,27 +83,56 @@ clearALL.addEventListener("click", () => {
 });
 
 doidau.addEventListener("click", () => {
+  if(input.innerText== 0 ) {
+  x = "";
+  y = "";
+  previous.innerText = "";
+  input.innerText = "0";
+  haveDot = false;
+  result = "";
+  }
+  else {
     x = "";
     y =-y;
     previous.innerText = "";
     result = "";
-    input.innerText =-input.innerText;
+    input.innerText =-input.innerText;}
   });
 
   persent.addEventListener("click", () => {
+    if(input.innerText== 0 ) {
+      x = "";
+      y = "";
+      previous.innerText = "";
+      input.innerText = "0";
+      haveDot = false;
+      result = "";
+      }
+      else {
     x = "";
     y =y/100;
     previous.innerText = "";
     result = "";
     input.innerText =input.innerText/100;
+      }
   });
 
   dot.addEventListener("click", () => {
+    if(input.innerText== 0 ) {
+      x = "";
+      y = "";
+      previous.innerText = "";
+      input.innerText = "0";
+      haveDot = false;
+      result = "";
+      }
+      else {
     x = "";
     y =0+y;
     previous.innerText = "";
     result = "";
     input.innerText = 0 + input.innerText;
+      }
   });
 
 
