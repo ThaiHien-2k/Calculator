@@ -109,7 +109,7 @@ clearALL.addEventListener("click", () => {
 
 clear.addEventListener("click", () => {
   x = "";
-  y = input.innerText;
+  y = input.innerText.slice(0,-1);
   previous.innerText = "";
   haveDot = false;
   result = "";
@@ -160,10 +160,9 @@ doidau.addEventListener("click", () => {
       }
       else {
         y = Math.round(y*0.01*100000000000000)/100000000000000;
-        console.log(y);
         x = x;
         input.innerText=y;
-        result = "";
+        
       }
 
   });
