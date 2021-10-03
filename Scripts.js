@@ -115,10 +115,21 @@ clear.addEventListener("click", () => {
   result = "";
   input.innerText = (input.innerText).slice(0,-1) ;
   if(input.innerText.length == 0) {
-    y = y;
+    x = "";
+    y = "";
+    previous.innerText = "";
     input.innerText = 0;
-  }
-});
+    haveDot = false;
+    result = "";
+  } else
+{
+  x = "";
+  y = input.innerText;
+  previous.innerText = "";
+  haveDot = false;
+  result = "";
+  input.innerText = (input.innerText);
+}});
 
 doidau.addEventListener("click", () => {
   if(input.innerText== 0 ) {
@@ -126,6 +137,7 @@ doidau.addEventListener("click", () => {
   y = "";
   previous.innerText = "";
   input.innerText = "0";
+  haveDot = false;
   result = "";
   }
   else {
@@ -141,6 +153,7 @@ doidau.addEventListener("click", () => {
       y = "";
       previous.innerText = "";
       input.innerText = "0";
+      haveDot = false;
       result = "";
       }
       else {
@@ -148,6 +161,22 @@ doidau.addEventListener("click", () => {
         x = x;
         input.innerText=y;}
 
+  });
+
+  dot.addEventListener("click", () => {
+    // if(input.innerText== 0 ) {
+    //   x = "";
+    //   y = "";
+    //   previous.innerText = "";
+    //   input.innerText = "0";
+    //   haveDot = false;
+    //   result = "";
+    //   }
+    //   else {
+    x = x;
+    y =0+y;
+    input.innerText = y;
+      // }
   });
 
 
