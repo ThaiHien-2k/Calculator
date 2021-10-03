@@ -4,6 +4,7 @@ const number = document.querySelectorAll('[data-number]');
 const operation = document.querySelectorAll('[data-operation]');
 const equal = document.querySelector('[data-equals]');
 const clearALL = document.querySelector('[data-AC]');
+const clear = document.querySelector('[data-clear]');
 const doidau = document.querySelector('[data-doidau]')
 const persent = document.querySelector('[data-persent]')
 const dot = document.querySelector('[data-dot]')
@@ -51,13 +52,37 @@ function clearVar(name = "") {
 
 function mathOperation() {
   if (lastOperation === "x") {
-    result = parseFloat(result) * parseFloat(y);
+    result = (parseFloat(result) * parseFloat(y));
+    if((result)%1 === 0){
+      result = result;
+    }
+    else{
+      result = result.toFixed(2);
+    }
   } else if (lastOperation === "+") {
-    result = parseFloat(result) + parseFloat(y);
+    result = (parseFloat(result) + parseFloat(y));
+    if((result)%1 === 0){
+      result = result;
+    }
+    else{
+      result = result.toFixed(2);
+    }
   } else if (lastOperation === "-") {
-    result = parseFloat(result) - parseFloat(y);
+    result = (parseFloat(result) - parseFloat(y));
+    if((result)%1 === 0){
+      result = result;
+    }
+    else{
+      result = result.toFixed(2);
+    }
   } else if (lastOperation === "÷") {
-    result = parseFloat(result) / parseFloat(y);
+    result = (parseFloat(result) / parseFloat(y));
+    if((result) % 1 === 0){
+      result = result;
+    }
+    else{
+      result = result.toFixed(2);
+    }
   } 
 }
 
@@ -77,9 +102,22 @@ clearALL.addEventListener("click", () => {
   x = "";
   y = "";
   previous.innerText = "";
-  input.innerText = "0";
+  input.innerText = 0;
   haveDot = false;
   result = "";
+});
+
+clear.addEventListener("click", () => {
+  x = "";
+  y = input.innerText;
+  previous.innerText = "";
+  haveDot = false;
+  result = "";
+  input.innerText = (input.innerText).slice(0,-1) ;
+  if(input.innerText.length == 0) {
+    y = y;
+    input.innerText = 0;
+  }
 });
 
 doidau.addEventListener("click", () => {
@@ -88,15 +126,13 @@ doidau.addEventListener("click", () => {
   y = "";
   previous.innerText = "";
   input.innerText = "0";
-  haveDot = false;
   result = "";
   }
   else {
-    x = "";
-    y =-y;
-    previous.innerText = "";
-    result = "";
-    input.innerText =-input.innerText;}
+    y = -y;
+    x = x;
+    input.innerText=y;
+  }
   });
 
   persent.addEventListener("click", () => {
@@ -105,34 +141,13 @@ doidau.addEventListener("click", () => {
       y = "";
       previous.innerText = "";
       input.innerText = "0";
-      haveDot = false;
       result = "";
       }
       else {
-    x = "";
-    y =y/100;
-    previous.innerText = "";
-    result = "";
-    input.innerText =input.innerText/100;
-      }
-  });
+        y = y/100;
+        x = x;
+        input.innerText=y;}
 
-  dot.addEventListener("click", () => {
-    if(input.innerText== 0 ) {
-      x = "";
-      y = "";
-      previous.innerText = "";
-      input.innerText = "0";
-      haveDot = false;
-      result = "";
-      }
-      else {
-    x = "";
-    y =0+y;
-    previous.innerText = "";
-    result = "";
-    input.innerText = 0 + input.innerText;
-      }
   });
 
 
@@ -150,16 +165,35 @@ window.addEventListener("keydown", (e) => {
     e.key === "9" ||
     e.key === "." 
   ) {
-    clickButtonEl(e.key);
-  } else if (e.key === "+" || e.key === "-" || e.key === "/" || e.key === "%") {
+    clickButton(e.key);
+  } else if (e.key === "+" || e.key === "-") {
     clickOperation(e.key);
   } else if (e.key === "*") {
     clickOperation("x");
-  } else if (e.key == "Enter" || e.key === "=") {
+  } 
+  else if (e.key === "/") {
+    clickOperation("÷");
+  }
+  else if (e.key === "*") {
+    clickOperation("x");
+  }
+  else if (e.key === "%") {
+    clickPersent("%");
+  }
+  else if (e.key === ",") {
+    clickDoidau(",");
+  }
+  else if (e.key === ";") {
+    clickAC(";");
+  }
+  else if (e.key == "Enter" || e.key === "=") {
     clickEqual();
   }
+  else if (e.key == "Backspace") {
+    clickClear();
+  }
 });
-function clickButtonEl(key) {
+function clickButton(key) {
   number.forEach((button) => {
     if (button.innerText === key) {
       button.click();
@@ -175,4 +209,20 @@ function clickOperation(key) {
 }
 function clickEqual() {
   equal.click();
+}
+
+function clickClear() {
+  clear.click();
+}
+
+function clickPersent() {
+  persent.click();
+}
+
+function clickAC() {
+  clearALL.click();
+}
+
+function clickDoidau() {
+  doidau.click();
 }

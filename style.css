@@ -70,7 +70,6 @@ div#green {
     min-height: 30px;
     width: 100%;
     text-align: right;
-    
     outline: none;
     border: unset;
 }
@@ -145,7 +144,9 @@ button:hover {
     background-color: #fd9e2b;
 }
 
-
+#clear {
+    display: none;
+}
 
 .clr {
     clear: both;
