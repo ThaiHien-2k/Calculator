@@ -57,7 +57,7 @@ function mathOperation() {
       result = result;
     }
     else{
-      result = result.toFixed(2);
+      result = Math.round(result*100000000000000)/100000000000000;
     }
   } else if (lastOperation === "+") {
     result = (parseFloat(result) + parseFloat(y));
@@ -65,7 +65,7 @@ function mathOperation() {
       result = result;
     }
     else{
-      result = result.toFixed(2);
+      result = Math.round(result*100000000000000)/100000000000000;
     }
   } else if (lastOperation === "-") {
     result = (parseFloat(result) - parseFloat(y));
@@ -73,7 +73,7 @@ function mathOperation() {
       result = result;
     }
     else{
-      result = result.toFixed(2);
+      result = Math.round(result*100000000000000)/100000000000000;
     }
   } else if (lastOperation === "÷") {
     result = (parseFloat(result) / parseFloat(y));
@@ -81,7 +81,7 @@ function mathOperation() {
       result = result;
     }
     else{
-      result = result.toFixed(2);
+      result = Math.round(result*100000000000000)/100000000000000;
     }
   } 
 }
@@ -147,6 +147,8 @@ doidau.addEventListener("click", () => {
   }
   });
 
+
+
   persent.addEventListener("click", () => {
     if(input.innerText== 0 ) {
       x = "";
@@ -157,28 +159,16 @@ doidau.addEventListener("click", () => {
       result = "";
       }
       else {
-        y = y/100;
+        y = Math.round(y*0.01*100000000000000)/100000000000000;
+        console.log(y);
         x = x;
-        input.innerText=y;}
+        input.innerText=y;
+        result = "";
+      }
 
   });
 
-  // dot.addEventListener("click", () => {
-  //   // if(input.innerText== 0 ) {
-  //   //   x = "";
-  //   //   y = "";
-  //   //   previous.innerText = "";
-  //   //   input.innerText = "0";
-  //   //   haveDot = false;
-  //   //   result = "";
-  //   //   }
-  //   //   else {
-  //   x = x;
-  //   y =0+y;
-  //   input.innerText = y;
-  //     // }
-  // });
-
+ 
 
 window.addEventListener("keydown", (e) => {
   if (
