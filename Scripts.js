@@ -163,21 +163,21 @@ doidau.addEventListener("click", () => {
 
   });
 
-  dot.addEventListener("click", () => {
-    // if(input.innerText== 0 ) {
-    //   x = "";
-    //   y = "";
-    //   previous.innerText = "";
-    //   input.innerText = "0";
-    //   haveDot = false;
-    //   result = "";
-    //   }
-    //   else {
-    x = x;
-    y =0+y;
-    input.innerText = y;
-      // }
-  });
+  // dot.addEventListener("click", () => {
+  //   // if(input.innerText== 0 ) {
+  //   //   x = "";
+  //   //   y = "";
+  //   //   previous.innerText = "";
+  //   //   input.innerText = "0";
+  //   //   haveDot = false;
+  //   //   result = "";
+  //   //   }
+  //   //   else {
+  //   x = x;
+  //   y =0+y;
+  //   input.innerText = y;
+  //     // }
+  // });
 
 
 window.addEventListener("keydown", (e) => {
