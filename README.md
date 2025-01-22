@@ -1,6 +1,4 @@
-Here's the complete text for your README file:
 
-```
 # Calculator
 
 A simple calculator application.
